@@ -1,7 +1,7 @@
 package tms.transport.dao;
 
 import tms.transport.entities.Ticket;
-import tms.transport.entities.TransportDocument;
+import tms.transport.entities.TravelId;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -36,8 +36,8 @@ public class TicketDAO {
         } else { System.out.println("Ticket with ID: '" + id + "' not found"); }
     }
 
-    public List<TransportDocument> findTicketsByDates(LocalDate from, LocalDate to) {
-        TypedQuery<TransportDocument> getTickets = em.createQuery("SELECT t FROM TransportDocument t WHERE t.dtype = 'Ticket' AND t.dateOfEmission BETWEEN :from AND :to ", TransportDocument.class);
+    public List<TravelId> findTicketsByDates(LocalDate from, LocalDate to) {
+        TypedQuery<TravelId> getTickets = em.createQuery("SELECT t FROM TravelId t WHERE t.dtype = 'Ticket' AND t.dateOfEmission BETWEEN :from AND :to ", TravelId.class);
         getTickets.setParameter("from", from);
         getTickets.setParameter("to", to);
         return getTickets.getResultList();

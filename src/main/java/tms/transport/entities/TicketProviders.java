@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "ticket_provider")
-public abstract class TicketProviders {
+public class TicketProviders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

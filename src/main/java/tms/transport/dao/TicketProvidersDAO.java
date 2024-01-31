@@ -12,19 +12,6 @@ public class TicketProvidersDAO {
         this.emf = emf;
     }
 
-    public void save(Ticket ticket) {
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction transaction = em.getTransaction();
-        System.out.println("⚪ Initializing transaction.");
-        transaction.begin();
-        System.out.println("⚪ Adding new object Ticket to Persistence Context.");
-        em.persist(ticket);
-        System.out.println("⚪ Saving new Ticket.");
-        transaction.commit();
-        System.out.println("🟢 New data added.");
-        em.close();
-    }
-
   public void save(TicketProviders ticketProvider) {
     EntityManager em = emf.createEntityManager();
     EntityTransaction transaction = em.getTransaction();
@@ -37,4 +24,7 @@ public class TicketProvidersDAO {
     System.out.println("🟢 New data added.");
     em.close();
   }
+
+
+
 }

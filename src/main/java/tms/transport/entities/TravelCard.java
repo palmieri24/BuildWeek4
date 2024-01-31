@@ -60,20 +60,6 @@ public class TravelCard extends TravelId {
         this.ticketProvider = ticketProvider;
     }
 
-    //VALIDITA' ANNUALE TESSERA
-    public boolean isExpired(){
-        Date today = new Date();
-        return today.after(dateOfExpire);
-    }
-
-    //RINNOVO TESSERA
-    public void renewTravelCard(){
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"), Locale.ITALY);
-        calendar.setTime(dateOfExpire);
-        calendar.add(Calendar.YEAR, 1);
-        dateOfExpire = calendar.getTime();
-    }
-
 
     @Override
     public String toString() {

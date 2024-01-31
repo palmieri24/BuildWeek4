@@ -1,7 +1,7 @@
 package tms.transport.dao;
 
 import tms.transport.entities.Subscription;
-import tms.transport.entities.TransportDocument;
+import tms.transport.entities.TravelId;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -34,8 +34,8 @@ public class SubscriptionDAO {
         } else { System.out.println("Subscription with ID = '" + found.getId() + "' not found"); }
     }
 
-    public List<TransportDocument> findSubscriptionsByDate(LocalDate from, LocalDate to) {
-        TypedQuery<TransportDocument> getSubscriptionsByDate = em.createQuery("SELECT t FROM TransportDocument t WHERE t.dtype = 'Subscription' AND t.dateOfEmission BETWEEN :from AND :to", TransportDocument.class);
+    public List<TravelId> findSubscriptionsByDate(LocalDate from, LocalDate to) {
+        TypedQuery<TravelId> getSubscriptionsByDate = em.createQuery("SELECT t FROM TransportDocument t WHERE t.dtype = 'Subscription' AND t.dateOfEmission BETWEEN :from AND :to", TravelId.class);
         getSubscriptionsByDate.setParameter("from", from);
         getSubscriptionsByDate.setParameter("to", to);
         return getSubscriptionsByDate.getResultList();
