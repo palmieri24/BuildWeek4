@@ -15,6 +15,4 @@ public class Ticket extends TransportDocument {
     public Ticket() {
     }
 
-
-
 }
