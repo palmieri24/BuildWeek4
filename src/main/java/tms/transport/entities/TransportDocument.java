@@ -1,4 +1,4 @@
 package tms.transport.entities;
 
-public class Bus {
+public class TransportDocument {
 }
