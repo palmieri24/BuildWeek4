@@ -39,7 +39,7 @@ public class VehicleDAO {
     }
   }
 
-  public void editVehicle(Long vehicleId, vehicleDataTypes vehicleType, int newCapacity) {
+  public void editVehicle(Long vehicleId, VehicleDataTypes vehicleType, int capacity) {
     EntityManager em = emf.createEntityManager();
     EntityTransaction transaction = em.getTransaction();
 
@@ -47,17 +47,19 @@ public class VehicleDAO {
       System.out.println("⚪ Initializing transaction.");
       transaction.begin();
 
-      Vehicle vehicle = em.find(Vehicle.class, id);
+      Vehicle vehicle = em.find(Vehicle.class, vehicleId);
 
       if (vehicle != null) {
-        vehicle.setCapacity(newCapacity);
+        vehicle.setVehicleType(vehicleType);
+        vehicle.setCapacity(capacity);
+
+        System.out.println("⚪ Updating Vehicle.");
         em.merge(vehicle);
 
-        System.out.println("⚪ Saving edited Vehicle.");
         transaction.commit();
-        System.out.println("🟢 Vehicle edited successfully.");
+        System.out.println("🟢 Vehicle updated.");
       } else {
-        System.out.println("🔴 Vehicle with ID " + id + " not found.");
+        System.out.println("🔴 Vehicle not found.");
       }
     } catch (Exception e) {
       if (transaction != null && transaction.isActive()) {
@@ -98,3 +100,4 @@ public class VehicleDAO {
     }
   }
 }
+

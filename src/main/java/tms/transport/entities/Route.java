@@ -1,9 +1,8 @@
 package tms.transport.entities;
 
-import javax.persistence.*;
-import java.util.List;
-
 public class Route {
+<<<<<<< Updated upstream
+=======
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "route_id")
@@ -81,4 +80,5 @@ public class Route {
     this.vehicle = vehicle;
     this.stops = stops;
   }
+>>>>>>> Stashed changes
 }
