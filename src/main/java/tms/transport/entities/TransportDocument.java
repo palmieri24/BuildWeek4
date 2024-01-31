@@ -4,11 +4,16 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+
 public abstract class TransportDocument {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(insertable = false, updatable = false)
+    private String dtype;
+
 
   @Column(name = "date_of_emission")
   private LocalDate dateOfEmission;
@@ -28,7 +33,17 @@ public abstract class TransportDocument {
     return dateOfEmission;
   }
 
-  public void setDateOfEmission(LocalDate dateOfEmission) {
-    this.dateOfEmission = dateOfEmission;
-  }
+
+    public void setDateOfEmission(LocalDate dateOfEmission) {
+        this.dateOfEmission = dateOfEmission;
+    }
+
+    @Override
+    public String toString() {
+        return "TransportDocument{" +
+                "id=" + id +
+                ", dateOfEmission=" + dateOfEmission +
+                '}';
+    }
+
 }
