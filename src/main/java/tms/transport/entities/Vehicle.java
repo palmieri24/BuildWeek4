@@ -1,12 +1,9 @@
 package tms.transport.entities;
 
-<<<<<<< Updated upstream
-public abstract class Vehicle {
-=======
 import tms.transport.enums.VehicleDataTypes;
+
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,6 +14,7 @@ public class Vehicle {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "vehicle_id")
   private Long id;
+  @Enumerated(EnumType.STRING)
   @Column(name = "vehicle_type")
   private VehicleDataTypes vehicleType;
   private int capacity;
@@ -56,5 +54,4 @@ public class Vehicle {
     this.vehicleType = vehicleType;
     this.capacity = capacity;
   }
->>>>>>> Stashed changes
 }

@@ -17,6 +17,14 @@ public class Stop {
   @ManyToMany(mappedBy = "stops")
   private List<Route> routes;
 
+  @ManyToMany
+  @JoinTable(
+          name = "route_stops",
+          joinColumns = @JoinColumn(name = "stop_id"),
+          inverseJoinColumns = @JoinColumn(name = "route_id")
+  )
+  private List<Stop> stops;
+
   public Stop() {
   }
 

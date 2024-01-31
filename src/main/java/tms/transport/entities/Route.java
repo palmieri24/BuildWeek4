@@ -1,8 +1,12 @@
 package tms.transport.entities;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "routes")
 public class Route {
-<<<<<<< Updated upstream
-=======
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "route_id")
@@ -28,6 +32,9 @@ public class Route {
           inverseJoinColumns = @JoinColumn(name = "stop_id")
   )
   private List<Stop> stops;
+
+  public Route() {
+  }
 
   public Vehicle getVehicle() {
     return vehicle;
@@ -80,5 +87,4 @@ public class Route {
     this.vehicle = vehicle;
     this.stops = stops;
   }
->>>>>>> Stashed changes
 }

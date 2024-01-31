@@ -1,4 +1,4 @@
 package tms.transport.entities;
 
-public abstract class TravelCard {
+public class TravelCard {
 }

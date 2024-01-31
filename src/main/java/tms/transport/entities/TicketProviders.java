@@ -1,4 +1,4 @@
 package tms.transport.entities;
 
-public class Tram {
+public class TicketProviders {
 }

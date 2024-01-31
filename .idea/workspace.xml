@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f431e95a-bb90-4bd6-9aad-e2014183cf72" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Bus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketMachine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketProviders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketRetailer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Tram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TravelCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TravelId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Vehicle.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="antoniobertuccio1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;m0n0t0ny&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c32fe25b-9d4f-4b2d-a073-cb1d96b39f80" />
+        <option name="url" value="https://github.com/palmieri24/BuildWeek4.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2bitL2EJCtpo5dJ1BXyhA5aWs78" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;antoniobertuccio&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f431e95a-bb90-4bd6-9aad-e2014183cf72" name="Changes" comment="" />
+      <created>1706709669651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706709669651</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
