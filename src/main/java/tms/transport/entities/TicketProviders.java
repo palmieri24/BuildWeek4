@@ -3,6 +3,7 @@ package tms.transport.entities;
 import tms.transport.enums.TicketProviderDataTypes;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,6 +19,9 @@ public class TicketProviders {
     @Column(name = "ticket_emitter")
     @Enumerated(EnumType.STRING)
     private TicketProviderDataTypes ticketProviderDataTypes;
+
+     @OneToMany(mappedBy = "ticketProvider")
+     private List<Ticket> ticketList;
 
     private Set<TravelCard> travelCards;
     @OneToMany(mappedBy = "travel_card")

@@ -35,10 +35,16 @@ public class SubscriptionDAO {
     }
 
     public List<TravelId> findSubscriptionsByDate(LocalDate from, LocalDate to) {
-        TypedQuery<TravelId> getSubscriptionsByDate = em.createQuery("SELECT t FROM TransportDocument t WHERE t.dtype = 'Subscription' AND t.dateOfEmission BETWEEN :from AND :to", TravelId.class);
+        TypedQuery<TravelId> getSubscriptionsByDate = em.createQuery("SELECT t FROM TravelId t WHERE t.dtype = 'Subscription' AND t.dateOfEmission BETWEEN :from AND :to", TravelId.class);
         getSubscriptionsByDate.setParameter("from", from);
         getSubscriptionsByDate.setParameter("to", to);
         return getSubscriptionsByDate.getResultList();
+    }
+
+    public List<TravelId> findSubcriptionsByProviderId(long providerId) {
+        TypedQuery<TravelId> getSubscriptions = em.createQuery("SELECT t FROM TravelId WHERE t.dtype = 'Subscription' AND t.ticketProvider = :providerId", TravelId.class);
+        getSubscriptions.setParameter("providerId", providerId);
+        return getSubscriptions.getResultList();
     }
 
 
