@@ -6,7 +6,6 @@ import tms.transport.dao.TicketDAO;
 import tms.transport.dao.UserDAO;
 import tms.transport.entities.Subscription;
 import tms.transport.entities.Ticket;
-import tms.transport.entities.TransportDocument;
 import tms.transport.entities.User;
 import tms.transport.enums.SubscriptionPeriodicityDataTypes;
 
