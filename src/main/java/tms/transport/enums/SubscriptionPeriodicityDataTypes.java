@@ -1,5 +1,5 @@
 package tms.transport.enums;
 
 public enum SubscriptionPeriodicityDataTypes {
-  WEEKLY, MOONTHLY
+  WEEKLY, MONTHLY
 }
