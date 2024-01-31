@@ -1,12 +1,16 @@
 package tms.transport.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 @Entity
-public abstract class TravelCard {
+public class TravelCard extends TravelId {
+    @OneToOne
+    private User user;
+    private TicketProviders ticketProvider;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -17,9 +21,11 @@ public abstract class TravelCard {
     public TravelCard() {
     }
 
-    public TravelCard(long id, Date dateOfExpire) {
+    public TravelCard(long id, Date dateOfExpire, User user, TicketProviders ticketProvider) {
         this.id = id;
         this.dateOfExpire = dateOfExpire;
+        this.user = user;
+        this.ticketProvider = ticketProvider;
     }
 
     public long getId() {
@@ -33,9 +39,25 @@ public abstract class TravelCard {
     public Date getDateOfExpire() {
         return dateOfExpire;
     }
-
     public void setDateOfExpire(Date dateOfExpire) {
         this.dateOfExpire = dateOfExpire;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "ticket_providers")
+    public TicketProviders getTicketProvider(){
+        return ticketProvider;
+    }
+    public void setTicketProvider(TicketProviders ticketProvider){
+        this.ticketProvider = ticketProvider;
     }
 
     //VALIDITA' ANNUALE TESSERA
@@ -46,17 +68,20 @@ public abstract class TravelCard {
 
     //RINNOVO TESSERA
     public void renewTravelCard(){
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Rome"), Locale.ITALY);
         calendar.setTime(dateOfExpire);
         calendar.add(Calendar.YEAR, 1);
         dateOfExpire = calendar.getTime();
     }
 
+
     @Override
     public String toString() {
-        return "TravelCard {" +
-                "id=" + id +
-                ", dateOfExpire=" + dateOfExpire +
+        return "TravelCard { Card ID = " + id +
+                "User ID = " + user.getId() +
+                ", dateOfEmission = " + this.getDateOfEmission() +
+                ", dateOfExpire = " + dateOfExpire +
+                ", TicketProvider = " + ticketProvider.getTicketProviderDataTypes() +
                 '}';
     }
 }

@@ -3,10 +3,11 @@ package tms.transport.entities;
 import tms.transport.enums.TicketProviderDataTypes;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "ticket_provider")
-public abstract class TicketProvider {
+public abstract class TicketProviders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -18,10 +19,19 @@ public abstract class TicketProvider {
     @Enumerated(EnumType.STRING)
     private TicketProviderDataTypes ticketProviderDataTypes;
 
-    public TicketProvider() {
+    private Set<TravelCard> travelCards;
+    @OneToMany(mappedBy = "travel_card")
+    public Set<TravelCard> getTravelCard(){
+        return travelCards;
+    }
+    public void setTravelCards(Set<TravelCard> travelCards){
+        this.travelCards = travelCards;
     }
 
-    public TicketProvider(long id, boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
+    public TicketProviders() {
+    }
+
+    public TicketProviders(long id, boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
         this.id = id;
         this.status = status;
         this.ticketProviderDataTypes = ticketProviderDataTypes;
@@ -59,5 +69,7 @@ public abstract class TicketProvider {
                 ", status=" + status +
                 '}';
     }
+
+
 
 }

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Table(name = "subscriptions")
 @Entity
-public class Subscription extends TransportDocument {
+public class Subscription extends TravelId {
     @Column
     private SubscriptionPeriodicityDataTypes periodicity;
 

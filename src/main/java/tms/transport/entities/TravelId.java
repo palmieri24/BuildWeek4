@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class TransportDocument {
+public abstract class TravelId {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -13,10 +13,10 @@ public abstract class TransportDocument {
     @Column(name = "date_of_emission")
     private LocalDate dateOfEmission;
 
-    public TransportDocument() {
+    public TravelId() {
     }
 
-    public TransportDocument(LocalDate dateOfEmission) {
+    public TravelId(LocalDate dateOfEmission) {
         this.dateOfEmission = dateOfEmission;
     }
 
