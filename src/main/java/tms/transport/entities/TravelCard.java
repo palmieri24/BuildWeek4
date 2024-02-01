@@ -1,6 +1,9 @@
 package tms.transport.entities;
 
+import tms.transport.enums.TicketProviderDataTypes;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -12,21 +15,24 @@ public class TravelCard extends TravelId {
     @JoinColumn(name = "id", unique = true, nullable = false)
     private User user;
     private TicketProviders ticketProvider;
+
+    @Enumerated(EnumType.STRING)
+    private TicketProviderDataTypes ticketProviderDataTypes;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "date_of_expire")
-    private Date dateOfExpire;
+    private LocalDate dateOfExpire;
 
     public TravelCard() {
     }
 
-    public TravelCard(long id, Date dateOfExpire, User user, TicketProviders ticketProvider) {
-        this.id = id;
-        this.dateOfExpire = dateOfExpire;
+    public TravelCard(LocalDate dateOfEmission, User user, TicketProviderDataTypes ticketProviderDataTypes, LocalDate dateOfExpire) {
+        super(dateOfEmission);
         this.user = user;
-        this.ticketProvider = ticketProvider;
+        this.ticketProviderDataTypes = ticketProviderDataTypes;
+        this.dateOfExpire = dateOfExpire;
     }
 
     public long getId() {
@@ -37,10 +43,10 @@ public class TravelCard extends TravelId {
         this.id = id;
     }
 
-    public Date getDateOfExpire() {
+    public LocalDate getDateOfExpire() {
         return dateOfExpire;
     }
-    public void setDateOfExpire(Date dateOfExpire) {
+    public void setDateOfExpire(LocalDate dateOfExpire) {
         this.dateOfExpire = dateOfExpire;
     }
 
