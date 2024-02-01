@@ -14,6 +14,10 @@ public class Ticket extends TravelId {
     @JoinColumn(name = "provider_id")
     private TicketProviders ticketProvider;
 
+    @ManyToOne
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
+
     public Ticket() {
     }
 

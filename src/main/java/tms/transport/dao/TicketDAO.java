@@ -48,4 +48,9 @@ public class TicketDAO {
         getTickets.setParameter("ticketProviderId", ticketProviderId);
         return getTickets.getResultList();
     }
+    public List<TravelId> findTicketsByVehicle(long vehicleId) {
+        TypedQuery<TravelId> getTickets = em.createQuery("SELECT t FROM TravelId WHERE t.dtype = 'Ticket' AND t.vehicle = :id", TravelId.class);
+        getTickets.setParameter("id", vehicleId);
+        return getTickets.getResultList();
+    }
 }

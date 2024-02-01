@@ -17,6 +17,9 @@ public class Vehicle {
   private int capacity;
   private boolean maintenance;
 
+  @OneToMany(mappedBy = "vehicle")
+  private List<Ticket> tickets;
+
   @ManyToMany(mappedBy = "vehicles")
   private List<Route> routes;
 
