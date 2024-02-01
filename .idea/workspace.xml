@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f431e95a-bb90-4bd6-9aad-e2014183cf72" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Bus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/dao/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/dao/RouteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/dao/VehicleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/dao/VehicleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketMachine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketProviders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketRetailer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Tram.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TravelCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TravelId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

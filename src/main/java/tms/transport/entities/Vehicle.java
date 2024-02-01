@@ -4,6 +4,7 @@ import tms.transport.enums.VehicleDataTypes;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,9 +20,6 @@ public class Vehicle {
   private VehicleDataTypes vehicleType;
   private int capacity;
   private boolean maintenance;
-
-  @OneToMany(mappedBy = "vehicle")
-  private Set<Route> routes = new HashSet<>();
 
   public Vehicle() {
   }
