@@ -48,8 +48,6 @@ public class SubscriptionDAO {
 
 
     public boolean isSubscriptionValid(long id){
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("tms");
-        EntityManager em = emf.createEntityManager();
         try {
             Query query = em.createQuery("SELECT tc.subscription FROM TravelCard tc WHERE tc.id = :id");
             query.setParameter("id", id);
@@ -62,9 +60,6 @@ public class SubscriptionDAO {
             }
         }catch (NoResultException ex){
             System.out.println("Errore: Nessun abbonamento trovato!" );
-        } finally {
-            em.close();
-            emf.close();
         }
         return false;
     }

@@ -44,6 +44,8 @@ public class Application {
 //        List<TransportDocument> yearSub = sd.findSubscriptionsByDate(LocalDate.of(2023, 1, 1), LocalDate.of(2023, 12, 31));
 //        yearSub.forEach(System.out::println);
 
+        //
+
 
         System.out.println("🔴 Chiusura dell'EntityManagerFactory & EntityManager alla fine dell'applicazione");
         emf.close();
