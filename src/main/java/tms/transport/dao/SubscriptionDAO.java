@@ -3,10 +3,9 @@ package tms.transport.dao;
 import tms.transport.entities.Subscription;
 import tms.transport.entities.TravelId;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class SubscriptionDAO {
@@ -48,4 +47,25 @@ public class SubscriptionDAO {
     }
 
 
+    public boolean isSubscriptionValid(long id){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("tms");
+        EntityManager em = emf.createEntityManager();
+        try {
+            Query query = em.createQuery("SELECT tc.subscription FROM TravelCard tc WHERE tc.id = :id");
+            query.setParameter("id", id);
+            Subscription subscription = (Subscription) query.getSingleResult();
+            if (subscription != null){
+                LocalDate currentDate = LocalDate.now();
+                if (currentDate.isBefore(subscription.getDateOfEmission()) && currentDate.isBefore(subscription.getDateOfExpire())){
+                    return true;
+                }
+            }
+        }catch (NoResultException ex){
+            System.out.println("Errore: Nessun abbonamento trovato!" );
+        } finally {
+            em.close();
+            emf.close();
+        }
+        return false;
+    }
 }

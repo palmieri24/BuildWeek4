@@ -9,6 +9,7 @@ import java.util.TimeZone;
 @Entity
 public class TravelCard extends TravelId {
     @OneToOne
+    @JoinColumn(name = "id", unique = true, nullable = false)
     private User user;
     private TicketProviders ticketProvider;
     @Id

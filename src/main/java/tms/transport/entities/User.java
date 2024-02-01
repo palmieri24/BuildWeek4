@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class User {
 
-  @OneToOne
+  @OneToOne(mappedBy = "user")
   private TravelCard travelCard;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
