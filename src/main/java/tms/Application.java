@@ -1,10 +1,5 @@
 package tms;
 
-import com.github.javafaker.Faker;
-import tms.transport.dao.*;
-import tms.transport.entities.*;
-import tms.transport.enums.SubscriptionPeriodicityDataTypes;
-import tms.transport.enums.TicketProviderDataTypes;
 import tms.transport.dao.RouteDAO;
 import tms.transport.dao.StopDAO;
 import tms.transport.dao.VehicleDAO;
@@ -14,8 +9,6 @@ import tms.transport.enums.VehicleDataTypes;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.time.LocalDate;
-import java.util.List;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,17 +24,13 @@ public class Application {
     VehicleDAO vehicleDAO = new VehicleDAO(emf);
     RouteDAO routeDAO = new RouteDAO(emf);
 
-    while (true) {
-      System.out.println("Cosa vuoi fare?\n1. Gestisci fermate\n2. Gestisci veicoli\n3. Gestisci rotte\n4. Esci");
-      String scelta = scan.nextLine();
-
-        // 👤 Aggiungi utente
+    // 👤 Aggiungi utente
 //       User user = new User(faker.name().firstName(), faker.name().lastName(), faker.date().birthday(18, 99));
 //        userDAO.save(user);
 
 //        TicketDAO td = new TicketDAO(em);
-  //      SubscriptionDAO sd = new SubscriptionDAO(em);
-  //      Subscription sub = new Subscription(LocalDate.of(2023, 5, 5), null, SubscriptionPeriodicityDataTypes.MONTHLY);
+    //      SubscriptionDAO sd = new SubscriptionDAO(em);
+    //      Subscription sub = new Subscription(LocalDate.of(2023, 5, 5), null, SubscriptionPeriodicityDataTypes.MONTHLY);
 ////        sd.save(sub);
 //
 //        System.out.println("FIND TICKETS BY DATE");
@@ -52,7 +41,7 @@ public class Application {
 //        List<TransportDocument> yearSub = sd.findSubscriptionsByDate(LocalDate.of(2023, 1, 1), LocalDate.of(2023, 12, 31));
 //        yearSub.forEach(System.out::println);
 
-        //RINNOVA TESSERA
+    //RINNOVA TESSERA
        /* TravelCardDAO tc = new TravelCardDAO(em);
         LocalDate emissionDate = LocalDate.of(2020, 1, 8);
         LocalDate expireDate = LocalDate.of(2021,1,8);
@@ -61,7 +50,7 @@ public class Application {
         tc.renewTravelCard(travelCard.getId(), emissionDate, expireDate);
         System.out.println("Tessera" + travelCard.getId() + "rinnovata con successo!"); */
 
-        //VERIFICA VALIDITÀ ABBONAMENTO
+    //VERIFICA VALIDITÀ ABBONAMENTO
        /* boolean subValidity = sd.isSubscriptionValid(sub.getId());
         if (subValidity == true){
             System.out.println("Abbonamento valido!");
@@ -69,11 +58,12 @@ public class Application {
             System.out.println("Abbonamento non valido!");
         }*/
 
+    while (true) {
+      System.out.println("Cosa vuoi fare?\n1. Gestisci fermate\n2. Gestisci veicoli\n3. Gestisci rotte\n4. Esci");
+      String scelta = scan.nextLine();
 
-
-
-        System.out.println("🔴 Chiusura dell'EntityManagerFactory & EntityManager alla fine dell'applicazione");
-        emf.close();
+      System.out.println("🔴 Chiusura dell'EntityManagerFactory & EntityManager alla fine dell'applicazione");
+      emf.close();
       switch (scelta) {
         case "1":
           System.out.println("Vuoi aggiungere, modificare o cancellare una fermata?\n1. Aggiungi\n2. Modifica\n3. Cancella");
@@ -265,6 +255,8 @@ public class Application {
           System.out.println("Scelta non riconosciuta.");
           break;
       }
+      System.out.println("Chiusura dell'EntityManagerFactory & EntityManager alla fine dell'applicazione");
+      emf.close();
     }
   }
 }

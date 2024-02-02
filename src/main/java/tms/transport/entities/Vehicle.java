@@ -21,7 +21,7 @@ public class Vehicle {
   @OneToMany(mappedBy = "vehicle")
   private List<Ticket> tickets;
 
-  @ManyToMany(mappedBy = "vehicles")
+  @OneToMany(mappedBy = "vehicle")
   private List<Route> routes;
 
   public Long getId() {

@@ -12,7 +12,7 @@ public class Ticket extends TravelId {
 
     @ManyToOne
     @JoinColumn(name = "provider_id")
-    private TicketProviders ticketProvider;
+    private TicketProvider ticketProvider;
 
     @ManyToOne
     @JoinColumn(name = "vehicle_id")
