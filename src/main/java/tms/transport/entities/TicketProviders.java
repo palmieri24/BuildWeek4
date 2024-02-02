@@ -9,65 +9,64 @@ import java.util.Set;
 @Entity
 @Table(name = "ticket_provider")
 public class TicketProviders {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private long id;
 
-    @Column(name = "status")
-    private boolean status;
+  @Column(name = "status")
+  private boolean status;
 
-    @Column(name = "ticket_emitter")
-    @Enumerated(EnumType.STRING)
-    private TicketProviderDataTypes ticketProviderDataTypes;
+  @Column(name = "ticket_emitter")
+  @Enumerated(EnumType.STRING)
+  private TicketProviderDataTypes ticketProviderDataTypes;
 
-     @OneToMany(mappedBy = "ticketProvider")
-     private List<Ticket> ticketList;
+  @OneToMany(mappedBy = "ticketProvider")
+  private List<Ticket> ticketList;
 
-    private Set<TravelCard> travelCards;
-    @OneToMany(mappedBy = "travel_card")
-    public Set<TravelCard> getTravelCard(){
-        return travelCards;
-    }
-    public void setTravelCards(Set<TravelCard> travelCards){
-        this.travelCards = travelCards;
-    }
+  private Set<TravelCard> travelCards;
 
-    public TicketProviders() {
-    }
+  @OneToMany(mappedBy = "travel_card")
+  public Set<TravelCard> getTravelCard() {
+    return travelCards;
+  }
 
-    public TicketProviders(boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
-        this.status = status;
-        this.ticketProviderDataTypes = ticketProviderDataTypes;
-    }
+  public void setTravelCards(Set<TravelCard> travelCards) {
+    this.travelCards = travelCards;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public TicketProviders() {
+  }
 
-//VERIFICARE STATO DEL DISTRIBUTORE
-    public boolean isActive() {
-        return status;
-    }
+  public TicketProviders(boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
+    this.status = status;
+    this.ticketProviderDataTypes = ticketProviderDataTypes;
+  }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public TicketProviderDataTypes getTicketProviderDataTypes() {
-        return ticketProviderDataTypes;
-    }
+  //VERIFICARE STATO DEL DISTRIBUTORE
+  public boolean isActive() {
+    return status;
+  }
 
-    public void setTicketProviderDataTypes(TicketProviderDataTypes ticketProviderDataTypes) {
-        this.ticketProviderDataTypes = ticketProviderDataTypes;
-    }
+  public void setStatus(boolean status) {
+    this.status = status;
+  }
 
-    @Override
-    public String toString() {
-        return "TicketProvider { ticketProvider= " + ticketProviderDataTypes +
-                ", status=" + status +
-                '}';
-    }
+  public TicketProviderDataTypes getTicketProviderDataTypes() {
+    return ticketProviderDataTypes;
+  }
 
+  public void setTicketProviderDataTypes(TicketProviderDataTypes ticketProviderDataTypes) {
+    this.ticketProviderDataTypes = ticketProviderDataTypes;
+  }
 
-
+  @Override
+  public String toString() {
+    return "TicketProvider { ticketProvider= " + ticketProviderDataTypes +
+            ", status=" + status +
+            '}';
+  }
 }

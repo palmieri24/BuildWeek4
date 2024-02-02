@@ -25,8 +25,18 @@ public class Maintenance {
   @Temporal(TemporalType.DATE)
   private Date maintenanceEndDate;
 
+  @Enumerated(EnumType.STRING)
+  @Column(name = "vehicle_data_type")
+  private VehicleDataTypes vehicleDataType;
+
+  public Maintenance() {
+  }
+
   public Long getId() {
     return id;
+  }
+
+  public void setVehicle(VehicleDataTypes vehicle) {
   }
 
   public Vehicle getVehicle() {
@@ -53,12 +63,14 @@ public class Maintenance {
     this.maintenanceEndDate = maintenanceEndDate;
   }
 
-  public Maintenance() {
+  public void setVehicleDataType(VehicleDataTypes vehicleDataType) {
+    this.vehicleDataType = vehicleDataType;
   }
 
-  public Maintenance(Vehicle vehicle, Date maintenanceStartDate, Date maintenanceEndDate) {
+  public Maintenance(Vehicle vehicle, Date maintenanceStartDate, Date maintenanceEndDate, VehicleDataTypes vehicleDataType) {
     this.vehicle = vehicle;
     this.maintenanceStartDate = maintenanceStartDate;
     this.maintenanceEndDate = maintenanceEndDate;
+    this.vehicleDataType = vehicleDataType;
   }
 }

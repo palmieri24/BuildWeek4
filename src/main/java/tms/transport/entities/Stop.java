@@ -9,15 +9,19 @@ public class Stop {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "stop_id")
-  private Long id;
+  private Long stopId;
 
   @Column(name = "stop_name")
   private String stopName;
 
-  @ManyToMany(mappedBy = "stops")
+  @OneToMany(mappedBy = "stops")
   private List<Route> routes;
 
   public Stop() {
+  }
+
+  public Long getStopId() {
+    return stopId;
   }
 
   public String getStopName() {

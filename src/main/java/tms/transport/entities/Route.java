@@ -6,6 +6,7 @@ import java.util.List;
 @Entity
 @Table(name = "routes")
 public class Route {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "route_id")
@@ -23,16 +24,20 @@ public class Route {
   @ManyToMany(mappedBy = "routes")
   private List<Vehicle> vehicles;
 
-  @ManyToMany
-  @JoinTable(
-          name = "route_stops",
-          joinColumns = @JoinColumn(name = "route_id"),
-          inverseJoinColumns = @JoinColumn(name = "stop_id")
-  )
+  @JoinColumn(name = "vehicle_id")
+  private Vehicle vehicle;
+
+  @ManyToOne
+  @JoinColumn(name = "stops")
   private List<Stop> stops;
 
   public Route() {
   }
+
+  public Vehicle getVehicle() {
+    return vehicle;
+  }
+
 
   public Long getId() {
     return id;
@@ -54,7 +59,7 @@ public class Route {
     this.arrivalPoint = arrivalPoint;
   }
 
-  public int getAverageTime() {
+  public double getAverageTime() {
     return averageTime;
   }
 
@@ -85,4 +90,20 @@ public class Route {
     this.vehicles = vehicles;
     this.stops = stops;
   }
+
+  public Route(String departurePoint, String arrivalPoint, int averageTime, List<Stop> stops) {
+    this.departurePoint = departurePoint;
+    this.arrivalPoint = arrivalPoint;
+    this.averageTime = averageTime;
+    this.stops = stops;
+  }
+
+  public void setAvgTime(int avgTime) {
+    this.averageTime = avgTime;
+  }
+
+  public void setVehicle(Vehicle vehicle) {
+    this.vehicle = vehicle;
+  }
 }
+
