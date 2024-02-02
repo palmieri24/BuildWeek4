@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f431e95a-bb90-4bd6-9aad-e2014183cf72" name="Changes" comment="can now retrieve average time per route">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_34__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_34__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_40__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_34_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_34_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_34__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_40_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_40_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_02_2024_10_40__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/dao/TicketProvidersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/dao/TicketProvidersDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/dao/TravelCardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/dao/TravelCardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketProviders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/TicketProvider.java" afterDir="false" />
@@ -75,15 +80,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Develop&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging DanielRrapi",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
