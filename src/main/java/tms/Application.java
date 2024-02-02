@@ -48,6 +48,7 @@ public class Application {
         LocalDate emissionDate = LocalDate.of(2020, 1, 8);
         LocalDate expireDate = LocalDate.of(2021,1,8);
         TravelCard travelCard = new TravelCard(emissionDate, user, TicketProviderDataTypes.MACHINE, expireDate);
+        tc.save(travelCard);
         tc.renewTravelCard(travelCard.getId(), emissionDate, expireDate);
         System.out.println("Tessera" + travelCard.getId() + "rinnovata con successo!"); */
 

@@ -35,19 +35,13 @@ public class TicketProviders {
     public TicketProviders() {
     }
 
-    public TicketProviders(long id, boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
-        this.id = id;
+    public TicketProviders(boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
         this.status = status;
         this.ticketProviderDataTypes = ticketProviderDataTypes;
     }
 
-
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
 //VERIFICARE STATO DEL DISTRIBUTORE
