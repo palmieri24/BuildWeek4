@@ -14,7 +14,7 @@ public class Stop {
   @Column(name = "stop_name")
   private String stopName;
 
-  @ManyToMany(mappedBy = "stops")
+  @OneToMany(mappedBy = "stops")
   private List<Route> routes;
 
   public Stop() {

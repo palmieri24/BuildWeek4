@@ -27,11 +27,8 @@ public class Route {
   @JoinColumn(name = "vehicle_id")
   private Vehicle vehicle;
 
-  @ManyToMany
-  @JoinTable(
-          name = "route_stops",
-          joinColumns = @JoinColumn(name = "route_id")
-  )
+  @ManyToOne
+  @JoinColumn(name = "stops")
   private List<Stop> stops;
 
   public Route() {

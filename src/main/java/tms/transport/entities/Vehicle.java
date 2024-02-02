@@ -55,9 +55,8 @@ public class Vehicle {
   public Vehicle() {
   }
 
-  public Vehicle(VehicleDataTypes vehicleType, int capacity, boolean maintenance) {
+  public Vehicle(VehicleDataTypes vehicleType, int capacity) {
     this.vehicleType = vehicleType;
     this.capacity = capacity;
-    this.maintenance = maintenance;
   }
 }
