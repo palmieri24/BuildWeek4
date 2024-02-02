@@ -17,17 +17,13 @@ public class Maintenance {
   @JoinColumn(name = "vehicle_id")
   private Vehicle vehicle;
 
-  @Column(name = "maintenance_start_date")
+  @Column(name = "start_date")
   @Temporal(TemporalType.DATE)
-  private Date maintenanceStartDate;
+  private Date startDate;
 
-  @Column(name = "maintenance_end_date")
+  @Column(name = "end_date")
   @Temporal(TemporalType.DATE)
-  private Date maintenanceEndDate;
-
-  @Enumerated(EnumType.STRING)
-  @Column(name = "vehicle_data_type")
-  private VehicleDataTypes vehicleDataType;
+  private Date endDate;
 
   public Maintenance() {
   }
@@ -36,8 +32,6 @@ public class Maintenance {
     return id;
   }
 
-  public void setVehicle(VehicleDataTypes vehicle) {
-  }
 
   public Vehicle getVehicle() {
     return vehicle;
@@ -47,30 +41,24 @@ public class Maintenance {
     this.vehicle = vehicle;
   }
 
-  public Date getMaintenanceStartDate() {
-    return maintenanceStartDate;
+  public Date getStartDate() {
+    return startDate;
   }
 
-  public void setMaintenanceStartDate(Date maintenanceStartDate) {
-    this.maintenanceStartDate = maintenanceStartDate;
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
   }
 
-  public Date getMaintenanceEndDate() {
-    return maintenanceEndDate;
+  public Date getEndDate() {
+    return endDate;
   }
 
-  public void setMaintenanceEndDate(Date maintenanceEndDate) {
-    this.maintenanceEndDate = maintenanceEndDate;
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
   }
-
-  public void setVehicleDataType(VehicleDataTypes vehicleDataType) {
-    this.vehicleDataType = vehicleDataType;
-  }
-
-  public Maintenance(Vehicle vehicle, Date maintenanceStartDate, Date maintenanceEndDate, VehicleDataTypes vehicleDataType) {
+  public Maintenance(Vehicle vehicle, Date startDate, Date endDate) {
     this.vehicle = vehicle;
-    this.maintenanceStartDate = maintenanceStartDate;
-    this.maintenanceEndDate = maintenanceEndDate;
-    this.vehicleDataType = vehicleDataType;
+    this.startDate = startDate;
+    this.endDate = endDate;
   }
 }

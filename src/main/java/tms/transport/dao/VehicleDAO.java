@@ -6,6 +6,9 @@ import tms.transport.enums.VehicleDataTypes;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class VehicleDAO {
