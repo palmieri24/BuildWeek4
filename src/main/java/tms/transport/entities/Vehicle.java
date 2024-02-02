@@ -1,6 +1,7 @@
 package tms.transport.entities;
 
 import tms.transport.enums.VehicleDataTypes;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,11 +13,11 @@ public class Vehicle {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "vehicle_id")
   private Long id;
+  @Enumerated(EnumType.STRING)
   @Column(name = "vehicle_type")
   private VehicleDataTypes vehicleType;
   private int capacity;
   private boolean maintenance;
-
   @OneToMany(mappedBy = "vehicle")
   private List<Ticket> tickets;
 

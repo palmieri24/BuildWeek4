@@ -15,7 +15,7 @@ public class Maintenance {
 
   @ManyToOne
   @JoinColumn(name = "vehicle_id")
-  private VehicleDataTypes vehicle;
+  private Vehicle vehicle;
 
   @Column(name = "maintenance_start_date")
   @Temporal(TemporalType.DATE)
@@ -25,15 +25,25 @@ public class Maintenance {
   @Temporal(TemporalType.DATE)
   private Date maintenanceEndDate;
 
+  @Enumerated(EnumType.STRING)
+  @Column(name = "vehicle_data_type")
+  private VehicleDataTypes vehicleDataType;
+
+  public Maintenance() {
+  }
+
   public Long getId() {
     return id;
   }
 
-  public VehicleDataTypes getVehicle() {
+  public void setVehicle(VehicleDataTypes vehicle) {
+  }
+
+  public Vehicle getVehicle() {
     return vehicle;
   }
 
-  public void setVehicle(VehicleDataTypes vehicle) {
+  public void setVehicle(Vehicle vehicle) {
     this.vehicle = vehicle;
   }
 
@@ -53,12 +63,14 @@ public class Maintenance {
     this.maintenanceEndDate = maintenanceEndDate;
   }
 
-  public Maintenance() {
+  public void setVehicleDataType(VehicleDataTypes vehicleDataType) {
+    this.vehicleDataType = vehicleDataType;
   }
 
-  public Maintenance(VehicleDataTypes vehicle, Date maintenanceStartDate, Date maintenanceEndDate) {
+  public Maintenance(Vehicle vehicle, Date maintenanceStartDate, Date maintenanceEndDate, VehicleDataTypes vehicleDataType) {
     this.vehicle = vehicle;
     this.maintenanceStartDate = maintenanceStartDate;
     this.maintenanceEndDate = maintenanceEndDate;
+    this.vehicleDataType = vehicleDataType;
   }
 }
