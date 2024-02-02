@@ -28,9 +28,10 @@ public class Application {
        User user = new User(faker.name().firstName(), faker.name().lastName(), faker.date().birthday(18, 99));
 //        userDAO.save(user);
 
-        TicketProviders ticketProviders1 = new TicketProviders();
+        TicketProviders ticketProviders1 = new TicketProviders(true, TicketProviderDataTypes.MACHINE);
         TicketDAO td = new TicketDAO(em);
-        Ticket ticket1 = new Ticket();
+        Ticket ticket1 = new Ticket(LocalDate.of(2023,1,1), null, ticketProviders1, null);
+        td.save(ticket1);
   //      SubscriptionDAO sd = new SubscriptionDAO(em);
   //      Subscription sub = new Subscription(LocalDate.of(2023, 5, 5), null, SubscriptionPeriodicityDataTypes.MONTHLY);
 ////        sd.save(sub);
