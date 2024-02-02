@@ -17,12 +17,12 @@ public class User {
   @Column(name = "last_name")
   private String lastName;
   @Column(name = "date_of_birth")
-  private Date dateOfBirth;
+  private LocalDate dateOfBirth;
 
   public User() {
   }
 
-  public User(String firstName, String lastName, Date dateOfBirth) {
+  public User(String firstName, String lastName, LocalDate dateOfBirth) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.dateOfBirth = dateOfBirth;
@@ -52,11 +52,11 @@ public class User {
     this.lastName = lastName;
   }
 
-  public Date getDateOfBirth() {
+  public LocalDate getDateOfBirth() {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(Date dateOfBirth) {
+  public void setDateOfBirth(LocalDate dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
