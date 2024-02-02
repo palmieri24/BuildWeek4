@@ -4,21 +4,20 @@ import tms.transport.enums.TicketProviderDataTypes;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
 
 @Entity
 public class TravelCard extends TravelId {
     @OneToOne
-    @JoinColumn(name = "id", unique = true, nullable = false)
+    @JoinColumn(name = "user_id", unique = true, nullable = false)
     private User user;
-    private TicketProviders ticketProvider;
+
+    @ManyToOne
+    @JoinColumn(name = "ticket_provider_id")
+    private TicketProvider ticketProvider;
 
     @Enumerated(EnumType.STRING)
     private TicketProviderDataTypes ticketProviderDataTypes;
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
@@ -59,14 +58,12 @@ public class TravelCard extends TravelId {
     }
 
     @ManyToOne
-    @JoinColumn(name = "ticket_providers")
-    public TicketProviders getTicketProvider(){
+    public TicketProvider getTicketProvider(){
         return ticketProvider;
     }
-    public void setTicketProvider(TicketProviders ticketProvider){
+    public void setTicketProvider(TicketProvider ticketProvider){
         this.ticketProvider = ticketProvider;
     }
-
 
     @Override
     public String toString() {

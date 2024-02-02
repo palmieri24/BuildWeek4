@@ -14,7 +14,7 @@ public class Stop {
   @Column(name = "stop_name")
   private String stopName;
 
-  @OneToMany(mappedBy = "stops")
+  @ManyToMany(mappedBy = "stops")
   private List<Route> routes;
 
   public Stop() {
@@ -30,14 +30,6 @@ public class Stop {
 
   public void setStopName(String stopName) {
     this.stopName = stopName;
-  }
-
-  public List<Route> getRoutes() {
-    return routes;
-  }
-
-  public void setRoutes(List<Route> routes) {
-    this.routes = routes;
   }
 
   public Stop(String stopName, List<Route> routes) {

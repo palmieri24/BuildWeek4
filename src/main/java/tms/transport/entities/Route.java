@@ -21,14 +21,16 @@ public class Route {
   @Column(name = "avg_time")
   private int averageTime;
 
-  @ManyToMany(mappedBy = "routes")
-  private List<Vehicle> vehicles;
-
+  @ManyToOne
   @JoinColumn(name = "vehicle_id")
   private Vehicle vehicle;
 
-  @ManyToOne
-  @JoinColumn(name = "stops")
+  @ManyToMany
+  @JoinTable(
+          name = "route_stops",
+          joinColumns = @JoinColumn(name = "route_id"),
+          inverseJoinColumns = @JoinColumn(name = "vehicle_id")
+  )
   private List<Stop> stops;
 
   public Route() {
@@ -37,7 +39,6 @@ public class Route {
   public Vehicle getVehicle() {
     return vehicle;
   }
-
 
   public Long getId() {
     return id;
@@ -67,27 +68,11 @@ public class Route {
     this.averageTime = averageTime;
   }
 
-  public List<Vehicle> getVehicles() {
-    return vehicles;
-  }
-
-  public void setVehicles(List<Vehicle> vehicles) {
-    this.vehicles = vehicles;
-  }
-
   public List<Stop> getStops() {
     return stops;
   }
 
   public void setStops(List<Stop> stops) {
-    this.stops = stops;
-  }
-
-  public Route(String departurePoint, String arrivalPoint, int averageTime, List<Vehicle> vehicles, List<Stop> stops) {
-    this.departurePoint = departurePoint;
-    this.arrivalPoint = arrivalPoint;
-    this.averageTime = averageTime;
-    this.vehicles = vehicles;
     this.stops = stops;
   }
 
@@ -106,4 +91,3 @@ public class Route {
     this.vehicle = vehicle;
   }
 }
-

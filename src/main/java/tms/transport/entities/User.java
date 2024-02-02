@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
+@Entity
 public class User {
 
   @OneToOne(mappedBy = "user")

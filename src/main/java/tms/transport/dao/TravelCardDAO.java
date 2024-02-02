@@ -1,7 +1,5 @@
 package tms.transport.dao;
 
-import tms.transport.entities.Ticket;
-import tms.transport.entities.TicketProviders;
 import tms.transport.entities.TravelCard;
 import tms.transport.entities.TravelId;
 

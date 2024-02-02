@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "ticket_provider")
-public class TicketProviders {
+public class TicketProvider {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
@@ -23,9 +23,9 @@ public class TicketProviders {
   @OneToMany(mappedBy = "ticketProvider")
   private List<Ticket> ticketList;
 
+  @OneToMany(mappedBy = "ticketProvider")
   private Set<TravelCard> travelCards;
 
-  @OneToMany(mappedBy = "travel_card")
   public Set<TravelCard> getTravelCard() {
     return travelCards;
   }
@@ -34,10 +34,10 @@ public class TicketProviders {
     this.travelCards = travelCards;
   }
 
-  public TicketProviders() {
+  public TicketProvider() {
   }
 
-  public TicketProviders(boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
+  public TicketProvider(boolean status, TicketProviderDataTypes ticketProviderDataTypes) {
     this.status = status;
     this.ticketProviderDataTypes = ticketProviderDataTypes;
   }

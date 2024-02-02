@@ -1,6 +1,5 @@
 package tms.transport.dao;
-import tms.transport.entities.Ticket;
-import tms.transport.entities.TicketProviders;
+import tms.transport.entities.TicketProvider;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,7 +11,7 @@ public class TicketProvidersDAO {
         this.emf = emf;
     }
 
-  public void save(TicketProviders ticketProvider) {
+  public void save(TicketProvider ticketProvider) {
     EntityManager em = emf.createEntityManager();
     EntityTransaction transaction = em.getTransaction();
     System.out.println("⚪ Initializing transaction.");
