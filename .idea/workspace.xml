@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f431e95a-bb90-4bd6-9aad-e2014183cf72" name="Changes" comment="">
+    <list default="true" id="f431e95a-bb90-4bd6-9aad-e2014183cf72" name="Changes" comment="can now manage routes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/dao/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/dao/RouteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/dao/VehicleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/dao/VehicleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Stop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tms/transport/entities/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +53,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -67,15 +68,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;antoniobertuccio&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "antoniobertuccio",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,6 +86,15 @@
       <option name="presentableId" value="Default" />
       <updated>1706709669651</updated>
     </task>
+    <task id="LOCAL-00001" summary="can now manage routes">
+      <option name="closed" value="true" />
+      <created>1706807557606</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706807557606</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,5 +107,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="can now manage routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="can now manage routes" />
   </component>
 </project>

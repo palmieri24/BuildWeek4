@@ -7,6 +7,7 @@ import tms.transport.entities.Vehicle;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class RouteDAO {
@@ -47,7 +48,7 @@ public class RouteDAO {
         transaction.rollback();
         System.out.println("🔴 Transaction rolled back.");
       }
-      e.printStackTrace();
+      e.fillInStackTrace();
     } finally {
       em.close();
     }
@@ -159,7 +160,7 @@ public class RouteDAO {
       if (transaction != null && transaction.isActive()) {
         transaction.rollback();
       }
-      e.printStackTrace();
+      e.fillInStackTrace();
     } finally {
       em.close();
     }
@@ -174,4 +175,17 @@ public class RouteDAO {
     }
   }
 
+  public int getAvgTime(Long routeId) {
+    EntityManager em = emf.createEntityManager();
+    try {
+      System.out.println("⚪ Initializing transaction for retrieving Route Average Time.");
+      TypedQuery<Integer> query = em.createQuery(
+              "SELECT r.averageTime FROM Route r WHERE r.id = :routeId\n", Integer.class);
+      query.setParameter("routeId", routeId);
+      Integer avgTime = query.getSingleResult();
+      return avgTime != null ? avgTime : 0;
+    } finally {
+      em.close();
+    }
+  }
 }

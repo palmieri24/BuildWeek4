@@ -127,5 +127,5 @@ public class VehicleDAO {
     }
   }
 
-
+//  metodo validazione del ticket
 }

@@ -12,7 +12,6 @@ import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Application {
 
   public static void main(String[] args) {
@@ -129,7 +128,7 @@ public class Application {
           break;
 
         case "3":
-          System.out.println("Gestione delle rotte:\n1. Aggiungi rotta\n2. Modifica rotta\n3. Cancella rotta\n4. Assegna mezzo");
+          System.out.println("Gestione delle rotte:\n1. Aggiungi rotta\n2. Modifica rotta\n3. Cancella rotta\n4. Assegna mezzo\n5. Ottieni il tempo di percorrenza di una delle rotte");
           String azioneRotte = scan.nextLine();
           switch (azioneRotte) {
             case "1":
@@ -192,6 +191,18 @@ public class Application {
                 }
               } else {
                 System.out.println("🔴 Numero rotta non valido.");
+              }
+              break;
+            case "5":
+              System.out.println("Visualizza Average Time di una rotta tramite ID:");
+              System.out.println("Inserisci l'ID della rotta di cui vuoi visualizzare l'Average Time:");
+              Long routeIdToCheck = scan.nextLong();
+              scan.nextLine();
+              int avgTime = routeDAO.getAvgTime(routeIdToCheck);
+              if (avgTime != -1) {
+                System.out.println("Average Time della rotta con ID " + routeIdToCheck + ": " + avgTime + " minuti");
+              } else {
+                System.out.println("Rotta con ID " + routeIdToCheck + " non trovata.");
               }
               break;
 

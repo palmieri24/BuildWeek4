@@ -19,7 +19,7 @@ public class Route {
   private String arrivalPoint;
 
   @Column(name = "avg_time")
-  private double averageTime;
+  private int averageTime;
 
   @ManyToOne
   @JoinColumn(name = "vehicle_id")
@@ -83,7 +83,7 @@ public class Route {
     this.stops = stops;
   }
 
-  public void setAvgTime(double avgTime) {
+  public void setAvgTime(int avgTime) {
     this.averageTime = avgTime;
   }
 
