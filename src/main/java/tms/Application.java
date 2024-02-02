@@ -4,6 +4,7 @@ import tms.transport.dao.MaintenanceDAO;
 import tms.transport.dao.RouteDAO;
 import tms.transport.dao.StopDAO;
 import tms.transport.dao.VehicleDAO;
+import tms.transport.entities.Maintenance;
 import tms.transport.entities.Route;
 import tms.transport.entities.Vehicle;
 import tms.transport.enums.VehicleDataTypes;
@@ -196,7 +197,7 @@ public class Application {
               break;
           }
         case "4":
-          System.out.println("Cosa vuoi fare con le manutenzioni?\n1. Aggiungi manutenzione\n2. Modifica manutenzione\n3. Cancella manutenzione");
+          System.out.println("Cosa vuoi fare con le manutenzioni?\n1. Aggiungi manutenzione\n2. Modifica manutenzione\n3. Cancella manutenzione\n4. Visualizza manutenzioni per periodo");
           String azioneManutenzioni = scan.nextLine();
           switch (azioneManutenzioni) {
             case "1":
@@ -246,13 +247,38 @@ public class Application {
             default:
               System.out.println("Azione non riconosciuta.");
               break;
+            case "4":
+              System.out.println("Visualizza manutenzioni per periodo:");
+              System.out.println("Inserisci la data di inizio (dd-mm-yyyy):");
+              String startPeriodStr = scan.nextLine();
+              System.out.println("Inserisci la data di fine (dd-mm-yyyy):");
+              String endPeriodStr = scan.nextLine();
+              try {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Date startPeriod = dateFormat.parse(startPeriodStr);
+                Date endPeriod = dateFormat.parse(endPeriodStr);
+                List<Maintenance> maintenanceList = maintenanceDAO.getMaintenanceByPeriod(startPeriod, endPeriod);
+                if (!maintenanceList.isEmpty()) {
+                  System.out.println("Manutenzioni nel periodo specificato:");
+                  for (Maintenance maintenance : maintenanceList) {
+                    System.out.println("ID: " + maintenance.getId() +
+                            ", Veicolo: " + maintenance.getVehicle().getId() +
+                            ", Start Date: " + maintenance.getStartDate() +
+                            ", End Date: " + maintenance.getEndDate());
+                  }
+                } else {
+                  System.out.println("Nessuna manutenzione nel periodo specificato.");
+                }
+              } catch (ParseException e) {
+                System.out.println("🔴 Formato data non valido.");
+              }
+              break;
           }
           break;
         case "5":
           System.out.println("Chiusura dell'applicazione.");
           emf.close();
           return;
-
         default:
           System.out.println("Scelta non riconosciuta.");
           break;

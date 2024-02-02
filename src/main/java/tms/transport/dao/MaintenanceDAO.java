@@ -6,7 +6,9 @@ import tms.transport.entities.Vehicle;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 import java.util.Date;
+import java.util.List;
 
 public class MaintenanceDAO {
   private final EntityManagerFactory emf;
@@ -97,6 +99,21 @@ public class MaintenanceDAO {
         transaction.rollback();
       }
       e.fillInStackTrace();
+    } finally {
+      em.close();
+    }
+  }
+
+  public List<Maintenance> getMaintenanceByPeriod(Date startDate, Date endDate) {
+    EntityManager em = emf.createEntityManager();
+    try {
+      String jpql = "SELECT m FROM Maintenance m " +
+              "WHERE m.startDate >= :startDate AND m.startDate <= :endDate";
+      TypedQuery<Maintenance> query = em.createQuery(jpql, Maintenance.class);
+      query.setParameter("startDate", startDate);
+      query.setParameter("endDate", endDate);
+
+      return query.getResultList();
     } finally {
       em.close();
     }

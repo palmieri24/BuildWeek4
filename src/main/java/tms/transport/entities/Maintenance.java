@@ -25,6 +25,10 @@ public class Maintenance {
   @Temporal(TemporalType.DATE)
   private Date endDate;
 
+  @Enumerated(EnumType.STRING)
+  @Column(name = "vehicle_data_type")
+  private VehicleDataTypes vehicleDataType;
+
   public Maintenance() {
   }
 
