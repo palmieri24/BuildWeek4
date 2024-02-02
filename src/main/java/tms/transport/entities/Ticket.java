@@ -21,9 +21,11 @@ public class Ticket extends TravelId {
     public Ticket() {
     }
 
-    public Ticket(LocalDate dateOfEmission, LocalDate checkedDate) {
+    public Ticket(LocalDate dateOfEmission, LocalDate checkedDate, TicketProviders ticketProvider, Vehicle vehicle) {
         super(dateOfEmission);
         this.checkedDate = checkedDate;
+        this.ticketProvider = ticketProvider;
+        this.vehicle = vehicle;
     }
 
     public LocalDate getCheckedDate() {
