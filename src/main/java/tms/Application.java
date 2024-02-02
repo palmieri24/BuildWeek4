@@ -363,6 +363,10 @@ public class Application {
                                     case "3":
                                         User user1 = new User("Pippo", "Pluto", LocalDate.of(2000, 1, 1));
                                         TravelCard travelCard1 = new TravelCard(LocalDate.now(), user1, TicketProviderDataTypes.RETAILER, LocalDate.of(2024, 12, 12));
+                                        break;
+                                    case "4":
+                                        Subscription subscription2 = new Subscription(LocalDate.now(), LocalDate.of(2024, 2, 20), SubscriptionPeriodicityDataTypes.MONTHLY);
+                                        break; //work in progress...
                                 }
                         }
 
