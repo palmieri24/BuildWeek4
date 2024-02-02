@@ -24,46 +24,10 @@ public class Application {
     VehicleDAO vehicleDAO = new VehicleDAO(emf);
     RouteDAO routeDAO = new RouteDAO(emf);
 
-    // 👤 Aggiungi utente
-//       User user = new User(faker.name().firstName(), faker.name().lastName(), faker.date().birthday(18, 99));
-//        userDAO.save(user);
-
-//        TicketDAO td = new TicketDAO(em);
-    //      SubscriptionDAO sd = new SubscriptionDAO(em);
-    //      Subscription sub = new Subscription(LocalDate.of(2023, 5, 5), null, SubscriptionPeriodicityDataTypes.MONTHLY);
-////        sd.save(sub);
-//
-//        System.out.println("FIND TICKETS BY DATE");
-//        List<TransportDocument> yearTicket = td.findTicketsByDates(LocalDate.of(2023, 1, 1), LocalDate.of(2023, 12, 31));
-//        yearTicket.forEach(System.out::println);
-//
-//        System.out.println("FIND SUBSCRIPTIONS BY DATE");
-//        List<TransportDocument> yearSub = sd.findSubscriptionsByDate(LocalDate.of(2023, 1, 1), LocalDate.of(2023, 12, 31));
-//        yearSub.forEach(System.out::println);
-
-    //RINNOVA TESSERA
-       /* TravelCardDAO tc = new TravelCardDAO(em);
-        LocalDate emissionDate = LocalDate.of(2020, 1, 8);
-        LocalDate expireDate = LocalDate.of(2021,1,8);
-        TravelCard travelCard = new TravelCard(emissionDate, user, TicketProviderDataTypes.MACHINE, expireDate);
-        tc.save(travelCard);
-        tc.renewTravelCard(travelCard.getId(), emissionDate, expireDate);
-        System.out.println("Tessera" + travelCard.getId() + "rinnovata con successo!"); */
-
-    //VERIFICA VALIDITÀ ABBONAMENTO
-       /* boolean subValidity = sd.isSubscriptionValid(sub.getId());
-        if (subValidity == true){
-            System.out.println("Abbonamento valido!");
-        } else {
-            System.out.println("Abbonamento non valido!");
-        }*/
-
     while (true) {
       System.out.println("Cosa vuoi fare?\n1. Gestisci fermate\n2. Gestisci veicoli\n3. Gestisci rotte\n4. Esci");
       String scelta = scan.nextLine();
 
-      System.out.println("🔴 Chiusura dell'EntityManagerFactory & EntityManager alla fine dell'applicazione");
-      emf.close();
       switch (scelta) {
         case "1":
           System.out.println("Vuoi aggiungere, modificare o cancellare una fermata?\n1. Aggiungi\n2. Modifica\n3. Cancella");
@@ -255,8 +219,6 @@ public class Application {
           System.out.println("Scelta non riconosciuta.");
           break;
       }
-      System.out.println("Chiusura dell'EntityManagerFactory & EntityManager alla fine dell'applicazione");
-      emf.close();
     }
   }
 }
